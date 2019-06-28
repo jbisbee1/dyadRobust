@@ -10,9 +10,7 @@ It is built on the replication materials for the same, available at https://doi.
 
 #### Installation
 
-`dyadRobust` can be installed from this GitHub repository,
-simply copy the following lines of code in your R terminal and it should install 
-everything you need to use `dyadRobust` on your computer: 
+`dyadRobust` can be installed from this GitHub repository with the following lines of code: 
 
 ```{r}
 if (!require("devtools")) install.packages("devtools")
