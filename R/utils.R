@@ -8,10 +8,12 @@ dyad.se.helper <- function(fit,dyad.mat,iUp,sw) {
     stop("Dyad ID issue")
   }
   sw$cluster <- clusIndexUp
-  dt <- data.table(sw)
-  setkey(dt,cluster)
-  uj_dt <- dt[,lapply(.SD,sum),by = cluster]
+  setkey(sw,cluster)
+  uj_dt <- sw[,lapply(.SD,sum),by = cluster]
   uj <- as.matrix(uj_dt[,2:ncol(uj_dt)])
   rownames(uj) <- uj_dt$cluster
-  return(sandwich(x = fit, meat = crossprod(uj)/length(clusIndexUp)))
+  meat <- crossprod(uj)/length(clusIndexUp)
+  bread <- bread(fit)
+  gc()
+  return((1/nrow(sw) * (bread %*% meat %*% bread)))
 }
