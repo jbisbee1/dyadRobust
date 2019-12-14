@@ -1,6 +1,6 @@
 Package: dyadRobust
 Title: Dyad robust standard error estimator
-Version: 0.0.0.9000
+Version: 0.0.0.9001
 Authors@R: person("James", "Bisbee", email = "jhb362@nyu.edu", role = c("aut", "cre"))
 Description: This package implements the multiway decomposition method for estimating cluster-robust standard errors for dyadic data as described in Aronow, Peter M., Cyrus Samii, and Valentina A. Assenova. "Cluster–robust variance estimation for dyadic data." Political Analysis 23.4 (2015): 564-577. It streamlines the script provided in the original replication materials available at https://doi.org/10.7910/DVN/OMJYE5.
 Depends: 
