@@ -41,10 +41,10 @@ out <- dyadRobust(fit = m,
 #### Under construction
 
 Updates are forthcoming (circa August 2024) which will allow users to use the package with:
-- `fixest` model objects
-- `felm` model objects
+- `feols` model objects from the `fixest` package
+- `felm` model objects from the `lfe` package
 
-In addition, there is an issue where using the package on a high performance computing cluster might cause a drain on the CPU. Please email the maintainer for help with this issue if it arises.
+In addition, there is an issue where using the package on a high performance computing cluster might cause a drain on the CPU due to the function ignoring any tasks-per-node parameters. Please email the maintainer for help with this issue if it arises.
 
 ---
 
