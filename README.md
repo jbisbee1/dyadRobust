@@ -14,7 +14,7 @@ It is built on the replication materials for the same, available at https://doi.
 
 ```{r}
 if (!require("devtools")) install.packages("devtools")
-devtools::install_github("jbisbee/dyadRobust")
+devtools::install_github("jbisbee1/dyadRobust")
 
 library(dyadRobust)
 ```
