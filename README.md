@@ -21,6 +21,33 @@ library(dyadRobust)
 
 ---
 
+#### Example
+
+Below is a short demonstration. 
+
+```{r}
+data("dyad.sim")
+m <- lm(dY ~ dX,dyad.sim)
+out <- dyadRobust(fit = m,
+           dat = dyad.sim,
+           dyadid = "dyads",
+           egoid = "dyad1",
+           alterid = "dyad2")
+}
+```
+
+---
+
+#### Under construction
+
+Updates are forthcoming (circa August 2024) which will allow users to use the package with:
+- `fixest` model objects
+- `felm` model objects
+
+In addition, there is an issue where using the package on a high performance computing cluster might cause a drain on the CPU. Please email the maintainer for help with this issue if it arises.
+
+---
+
 #### Maintainer(s)
 
 [James Bisbee](http://www.jamesbisbee.com/) - <jhb362@nyu.edu>
