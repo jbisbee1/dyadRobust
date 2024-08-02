@@ -38,13 +38,39 @@ out <- dyadRobust(fit = m,
 
 ---
 
-#### Under construction
+#### Speed improvements with `feols()` and `lfe()` functions
 
-Updates are forthcoming (circa August 2024) which will allow users to use the package with:
-- `feols` model objects from the `fixest` package
-- `felm` model objects from the `lfe` package
+Speed can be further improved if estimating a model with fixed effects using either the `feols()` function from the `fixest` package, or the `felm()` function from the `lfe` package. Speed improvements relative to the replication code from Aronow, Samii, and Assenova (2015) are consistently ~94% across models, as demonstrated using the replication code from Fisman, Raymond, Sheena S Iyengar, Emik Kamenica and Itamar Simonson. 2006. "Gender differences in mate selection: Evidence from a speed dating experiment." Quarterly Journal of Economics 121:673–697.
 
-In addition, there is an issue where using the package on a high performance computing cluster might cause a drain on the CPU due to the function ignoring any tasks-per-node parameters. Please email the maintainer for help with this issue if it arises.
+![Sample image](https://raw.githubusercontent.com/jbisbee1/dyadRobust/master/timing.png)
+
+To take advantage of these improvements, make sure to set the following inputs:
+
+	- `feols()`: `lean = FALSE` and `demeaned = TRUE`
+	- `felm()`: `keepCX = TRUE`
+	
+Examples are provided below.
+
+```{r}
+require(fixest)
+m <- feols(dec ~ amb + attr + intel | iid,
+           sdat,weights = sdat$wts,lean = F,demeaned = T)
+out <- dyadRobust(fit = m,
+                  dat = sdat,
+                  dyadid = "dyadid",
+                  egoid = "fid",
+                  alterid = "mid")
+
+require(lfe)
+m <- felm(dec ~ amb + attr + intel | iid,
+          sdat,weights = sdat$wts,keepCX=T)
+out <- dyadRobust(fit = m,
+                  dat = sdat,
+                  dyadid = "dyadid",
+                  egoid = "fid",
+                  alterid = "mid")
+}
+```
 
 ---
 
