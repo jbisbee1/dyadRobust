@@ -33,7 +33,6 @@ out <- dyadRobust(fit = m,
            dyadid = "dyads",
            egoid = "dyad1",
            alterid = "dyad2")
-}
 ```
 
 ---
@@ -69,7 +68,6 @@ out <- dyadRobust(fit = m,
                   dyadid = "dyadid",
                   egoid = "fid",
                   alterid = "mid")
-}
 ```
 
 ---
