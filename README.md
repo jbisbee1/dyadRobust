@@ -42,7 +42,7 @@ out <- dyadRobust(fit = m,
 
 Speed can be further improved if estimating a model with fixed effects using either the `feols()` function from the `fixest` package, or the `felm()` function from the `lfe` package. Speed improvements relative to the replication code from Aronow, Samii, and Assenova (2015) are consistently ~94% across models, as demonstrated using the replication code from Fisman, Raymond, Sheena S Iyengar, Emik Kamenica and Itamar Simonson. 2006. "Gender differences in mate selection: Evidence from a speed dating experiment." Quarterly Journal of Economics 121:673–697.
 
-![Sample image](https://raw.githubusercontent.com/jbisbee1/dyadRobust/master/timing.png)
+![Sample image](https://raw.githubusercontent.com/jbisbee1/dyadRobust/master/model_comparison.png)
 
 To take advantage of these improvements, make sure to set the following inputs:
 
